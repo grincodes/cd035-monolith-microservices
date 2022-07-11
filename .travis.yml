@@ -12,7 +12,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t reverseproxy ./udagram-reverseproxy
+  - docker build -t reverseproxy .
   - docker tag reverseproxy desigerseyi12345/reverseproxy:v1
 
 after_success:
