@@ -6,6 +6,6 @@
 - docker tag reverseproxy desigerseyi12345/reverseproxy:v1
 
 # Push
-# Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
+# Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings.
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 - docker push designerseyi12345/reverseproxy:v1
