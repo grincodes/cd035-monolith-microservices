@@ -14,16 +14,16 @@ script:
   - docker --version # print the version for logging
   - docker build -t udagram-api-user ./udagram-api-user
   - docker tag udagram-api-user desigerseyi12345/udagram-api-user:v1
-  - docker build -t udagram-api-feed ./udagram-api-feed 
-  - docker tag udagram-api-feed desigerseyi12345/udagram-api-feed:v1
-  - docker build -t reverseproxy ./udagram--reverseproxy 
-  - docker tag reverseproxy desigerseyi12345/reverseproxy:v1
-  - docker build -t udagram-frontend ./udagram-frontend 
-  - docker tag udagram-frontend desigerseyi12345/udagram-frontend:v1
+  # - docker build -t udagram-api-feed ./udagram-api-feed 
+  # - docker tag udagram-api-feed desigerseyi12345/udagram-api-feed:v1
+  # - docker build -t reverseproxy ./udagram--reverseproxy 
+  # - docker tag reverseproxy desigerseyi12345/reverseproxy:v1
+  # - docker build -t udagram-frontend ./udagram-frontend 
+  # - docker tag udagram-frontend desigerseyi12345/udagram-frontend:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push designerseyi12345/udagram-api-user
-  - docker push designerseyi12345/udagram-api-feed
-  - docker push designerseyi12345/reverseproxy
-  - docker push designerseyi12345/udagram-api-frontend
+  - docker push designerseyi12345/udagram-api-user:v1
+  # - docker push designerseyi12345/udagram-api-feed
+  # - docker push designerseyi12345/reverseproxy
+  # - docker push designerseyi12345/udagram-api-frontend
