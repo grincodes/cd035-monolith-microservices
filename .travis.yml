@@ -13,7 +13,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t test-udagram-api-user ./udagram-api-user
-  - docker tag test-udagram-api-feed designerseyi12345/udagram-api-feed:latest
+  - docker tag test-udagram-api-user designerseyi12345/udagram-api-feed:latest
   - docker build -t test-udagram-api-feed ./udagram-api-feed 
   - docker tag test-udagram-api-feed designerseyi12345/udagram-api-feed:latest
   - docker build -t test-reverseproxy ./udagram--reverseproxy 
