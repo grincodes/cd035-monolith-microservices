@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  reverseproxy
+  namespace: default
+  labels:
+    app:  reverseproxy
+spec:
+  selector:
+    matchLabels:
+      app: reverseproxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  reverseproxy
+    spec:
+      # initContainers:
+        # Init containers are exactly like regular containers, except:
+          # - Init containers always run to completion.
+          # - Each init container must complete successfully before the next one starts.
+      containers:
+      - name:  reverseproxy
+        image:  designerseyi12345/reverseproxy
+        imagePullPolicy: Always     
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"       
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
