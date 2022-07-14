@@ -26,4 +26,4 @@ after_success:
   - docker push designerseyi12345/udagram-api-user
   - docker push designerseyi12345/udagram-api-feed
   - docker push designerseyi12345/reverseproxy
-  - docker push designerseyi12345/udagram-api-frontend
+  - docker push designerseyi12345/udagram-frontend

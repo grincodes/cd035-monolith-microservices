@@ -20,15 +20,15 @@ spec:
           # - Init containers always run to completion.
           # - Each init container must complete successfully before the next one starts.
       containers:
-      - name:  bfrontend
+      - name:  frontend
         image:  designerseyi12345/udagram-frontend
         resources:
-        readinessProbe:
-          httpGet:
-            path: /_status/healthz
-            port: 8100
-          
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"    
         ports:
         - containerPort:  8100
-          name:  backend-feed
       restartPolicy: Always

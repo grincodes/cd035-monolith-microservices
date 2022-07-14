@@ -21,9 +21,14 @@ spec:
           # - Each init container must complete successfully before the next one starts.
       containers:
       - name:  backend-feed
-        image:  designerseyi12345/udagram-api-feed
+        image:  designerseyi12345/udagram-api-feed:latest
         resources:
-  
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"  
         env:
         - name: POSTGRES_USERNAME
           valueFrom:

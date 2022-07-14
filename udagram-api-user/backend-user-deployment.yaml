@@ -21,13 +21,14 @@ spec:
           # - Each init container must complete successfully before the next one starts.
       containers:
       - name:  backend-user
-        image:  designerseyi12345/udagram-api-user
+        image:  designerseyi12345/udagram-api-user:v1
         resources:
-        readinessProbe:
-          httpGet:
-            path: /_status/healthz
-            port: 8080
-          
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1.5Gi"
+            cpu: "500m"        
         env:
         - name: POSTGRES_USERNAME
           valueFrom:
@@ -100,5 +101,5 @@ spec:
 
         ports:
         - containerPort:  8080
-          name:  backend-feed
+          name:  backend-user
       restartPolicy: Always

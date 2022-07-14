@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: reverseproxy
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -21,7 +21,7 @@ spec:
           # - Each init container must complete successfully before the next one starts.
       containers:
       - name:  reverseproxy
-        image:  designerseyi12345/reverseproxy
+        image:  designerseyi12345/reverseproxy:v3
         imagePullPolicy: Always     
         resources:
           requests:
