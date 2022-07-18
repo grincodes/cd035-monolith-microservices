@@ -4,7 +4,7 @@ metadata:
   name: env-config
 data:
   POSTGRES_USERNAME : postgres
-  POSTGRES_HOST : udagram-db.cndlo0ulzlz7.us-east-1.rds.amazonaws.com
+  POSTGRES_HOST : udagram-db.cycjvob3hlvl.us-east-1.rds.amazonaws.com
   POSTGRES_DB : postgres
   DB_DIALECT : postgres
   AWS_REGION : us-east-1
